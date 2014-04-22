@@ -26,9 +26,9 @@ IF( WIN32 )
 		MAIN_DEPENDENCY assimp)
 ENDIF( WIN32 )
 
-TARGET_LINK_LIBRARIES( assimp_cmd assimp ${ZLIB_LIBRARIES})
+TARGET_LINK_LIBRARIES( assimp_cmd assimp_devel ${ZLIB_LIBRARIES})
 SET_TARGET_PROPERTIES( assimp_cmd PROPERTIES
-	OUTPUT_NAME assimp
+	OUTPUT_NAME assimp_devel
 )
 
 INSTALL( TARGETS assimp_cmd

@@ -127,7 +127,8 @@ void ColladaExporter::WriteHeader()
 	mOutput << startstr << "</contributor>" << endstr;
   mOutput << startstr << "<created>2000-01-01T23:59:59</created>" << endstr;
   mOutput << startstr << "<modified>2000-01-01T23:59:59</modified>" << endstr;
-	mOutput << startstr << "<unit name=\"centimeter\" meter=\"0.01\" />" << endstr;
+  //mOutput << startstr << "<unit name=\"centimeter\" meter=\"0.01\" />" << endstr;
+  mOutput << startstr << "<unit name=\"meter\" meter=\"1.0\" />" << endstr;
 	mOutput << startstr << "<up_axis>Y_UP</up_axis>" << endstr;
 	PopTag();
 	mOutput << startstr << "</asset>" << endstr;
@@ -299,7 +300,8 @@ void ColladaExporter::WriteMaterials()
       WriteTextureParamEntry( mat.specular, "specular", mat.name);
       WriteTextureParamEntry( mat.reflective, "reflective", mat.name);
 
-      mOutput << startstr << "<technique sid=\"standard\">" << endstr;
+      //mOutput << startstr << "<technique sid=\"standard\">" << endstr;
+      mOutput << startstr << "<technique sid=\"common\">" << endstr;
       PushTag();
       mOutput << startstr << "<phong>" << endstr;
       PushTag();
